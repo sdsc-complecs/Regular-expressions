@@ -1,10 +1,12 @@
+# Regular expression exercises
+
 This file contains some suggested exercises to help you master the
 material covered in the COMPLECS "Using Regular Expressions with Linux
 Tools" training.
 
-(1) Work through all the examples from the presentation and make sure
-that you understand what the regexes are doing. We also suggest
-modifying the examples or deliberately breaking things (e.g., omitting
+(1) Work through all the examples from the presentation, found in the file examples.sh, and make sure
+ you understand what the regexes are doing. We also suggest modifying the examples or deliberately 
+breaking things (e.g., omitting
 quotes, backslashes, grep options, etc.) to see what happens.
 
 (2) The best way to learn regexes is to apply them to your own
@@ -13,10 +15,10 @@ developing a solution now.
 
 (3) Write a grep one-liner that will match phone numbers of the forms
 
-    (i) (xxx) xxx-xxxx
-    (ii) xxx-xxx-xxxx
+(xxx) xxx-xxxx  
+xxx-xxx-xxxx
 
-You can start by handling each of the two formats separately and
+You can approach this incrementally by handling each of the two formats separately and
 ignoring additional characters that may be adjacent to the number
 (e.g., "(555) 555-1234x" or "x555-555-1234"), then combine into a
 single regex using alternation and proper handling of word boundaries.
@@ -26,20 +28,12 @@ following form. Optionally use -o option to output just the match. In
 case you're wondering, this is a portion of the pattern that can be
 used to identify sequences that code for a portion of an antibody.
 
-C
-8-17 upper case letters
-W
-38-47 upper case letters
-one letter from the list ACFILMV
+C + 8-17 upper case letters + W + 38-47 upper case letters + one letter from {ACFILMV}
 
 (5) Modify the previous one-liner to limit to valid amino acids (upper
-case letters minus BJOUXZ)
+case letters minus {BJOUXZ})
 
-C
-8-17 standard amino acids
-W
-38-47 standard amino acids
-one letter from the list ACFILMV
+C + 8-17 standard amino acids + W + 38-47 standard amino acids + one letter from {ACFILMV}
 
 (6) Write a grep one-liner that identifies strings over the alphabet
 {a,b} that contain bba as a substring starting in an even-numbered

@@ -1,4 +1,4 @@
-Answers to exercises
+# Answers to exercises
 
 Exercise 1 involve working through the COMPLECS "Using Regular
 Expressions with Linux Tools" training. Exercise 2 is to apply regexes
@@ -6,34 +6,24 @@ to your own work. Answers to other problems are given below.
 
 (3) Write a grep one-liner that will match phone numbers of the forms
 
-    (i) (xxx) xxx-xxxx
-    (ii) xxx-xxx-xxxx
+(xxx) xxx-xxxx  
+xxx-xxx-xxxx
 
 You can start by handling each of the two formats separately and
 ignoring additional characters that may be adjacent to the number
 (e.g., "(555) 555-1234x" or "x555-555-1234"), then combine into a
 single regex using alternation and proper handling of word boundaries.
 
-(4) Write a grep one-liner that will find amino acid sequences of the
-following form. Optionally use -o option to output just the match. In
-case you're wondering, this is a portion of the pattern that can be
-used to identify sequences that code for a portion of an antibody.
+(4) Write a grep one-liner that will find amino acid sequences of the following form
+('+' signs indicate concateation and are not part of string). Optionally use -o option to 
+output just the match. In case you're wondering, this is a part of the pattern that can be used to identify 
+sequences that code for a portion of an antibody.
 
-C
-8-17 upper case letters
-W
-38-47 upper case letters
-one letter from the list ACFILMV
+C + 8-17 upper case letters + W + 38-47 upper case letters + one letter from {ACFILMV}
 
-(5) Modify the previous one-liner to limit to valid amino acids (upper
-case letters minus BJOUXZ)
+(5) Modify the previous one-liner to limit to valid amino acids (upper case letters minus {BJOUXZ})
 
-C
-8-17 standard amino acids
-W
-38-47 standard amino acids
-one letter from the list ACFILMV
-
+C + 8-17 standard amino acids + W + 38-47 standard amino acids + one letter from {ACFILMV}
 
 (6) Write a grep one-liner that identifies strings over the alphabet
 {a,b} that contain bba as a substring starting in an even-numbered
@@ -44,7 +34,9 @@ starts at zero. In the strings bba, aabba, and aaaabba, the substring
 bba starts in positions 0, 2 and 4 respectively and satisfies our
 condition.
 
+`
 grep -E '^([ab][ab])*bba[ab]*$' ab.txt
+`
 
 (7) Write a grep one-liner that identifies strings over the alphabet
 {a,b} in which there is no occurrence of the substring aa. You can
@@ -54,6 +46,7 @@ Note that there are two ways to do this. The easy way is to use the
 grep -v option to perform an inverted match. The hard way is to write
 the full regex. We suggest trying both.
 
+```
 grep -vE 'aa'  ab.txt
 grep -E '^a?(b|ba)*$' ab.txt
-
+```

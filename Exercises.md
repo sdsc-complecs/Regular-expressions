@@ -18,14 +18,15 @@ developing a solution now.
 (xxx) xxx-xxxx  
 xxx-xxx-xxxx
 
-You can approach this incrementally by handling each of the two formats separately and
-ignoring additional characters that may be adjacent to the number
+You can approach this incrementally by handling each of the two formats 
+separately and ignoring additional characters that may be adjacent to the number
 (e.g., "(555) 555-1234x" or "x555-555-1234"), then combine into a
 single regex using alternation and proper handling of word boundaries.
 
 (4) Write a grep one-liner that will find amino acid sequences of the
-following form. Optionally use -o option to output just the match. In
-case you're wondering, this is a portion of the pattern that can be
+following form ('+' signs indicate concateation and are not part of string). 
+Optionally use -o option to output just the match. In
+case you're wondering, this is a part of the pattern that can be
 used to identify sequences that code for a portion of an antibody.
 
 C + 8-17 upper case letters + W + 38-47 upper case letters + one letter from {ACFILMV}

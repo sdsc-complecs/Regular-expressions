@@ -19,6 +19,8 @@ developing a solution now.
 xxx-xxxx  
 xxx-xxx-xxxx
 
+Where x is any digit and we're considering numbers starting with zero valid.
+
 You can approach this incrementally by handling each of the two
 formats separately and ignoring additional characters that may be
 adjacent to the number (e.g., "555-555-1234x" or "x555-555-1234"),

@@ -9,6 +9,8 @@ to your own work. Answers to other problems are given below.
 xxx-xxxx  
 xxx-xxx-xxxx
 
+Where x is any digit and we're considering numbers starting with zero valid.
+
 You can approach this incrementally by handling each of the two
 formats separately and ignoring additional characters that may be
 adjacent to the number (e.g., "555-555-1234x" or "x555-555-1234"),
@@ -40,13 +42,13 @@ because the dash before the 7-digit number is considered a punctuation
 and hence part of the word boundary. We can exclude these spurious
 matches by breaking up the last regex into two parts; the first looks
 for 7-digit numbers at the start of the line and the second looks for
-a number preceded by anything but a letter, number or dash. This may
+a 7-digit number preceded by anything but a letter, number or dash. This may
 still miss still some edge cases and you'll need to think more
 carefully about what is considered an acceptable match. For example,
 is a quoted number valid?
 
 ```
-grep -E '\b[0-9]{3}-[0-9]{3}-[0-9]{4}\>|^[0-9]{3}-[0-9]{4}\>|[^-0-9A-Za-z][0-9]{3}-[0-9]{4}\>' phone.txt
+grep -E '\<[0-9]{3}-[0-9]{3}-[0-9]{4}\>|^[0-9]{3}-[0-9]{4}\>|[^-0-9A-Za-z][0-9]{3}-[0-9]{4}\>' phone.txt
 ```
 
 (4) Write a grep one-liner that will find amino acid sequences of the

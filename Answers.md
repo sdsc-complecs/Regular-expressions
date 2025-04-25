@@ -15,7 +15,7 @@ ignoring additional characters that may be adjacent to the number
 single regex using alternation and proper handling of word boundaries.
 
 (4) Write a grep one-liner that will find amino acid sequences of the
-following form ('+' signs indicate concateation and are not part of
+following form ('+' signs indicate concatenation and are not part of
 string). Optionally use -o option to output just the match. In case
 you're wondering, this is a part of the pattern that can be used to
 identify sequences that code for a portion of an antibody.
@@ -63,8 +63,8 @@ that you already have a reasonable working knpowledge of sed.
 
 You can test your solution using the file "the.txt"
 
-Hints: Use \b to indicate word boundaries, \(...\) to capture match,
-and \1 to use match.
+Hints: Use `\b` to indicate word boundaries, `\(...\)` to capture match,
+and `\1` to use match.
 
 To make this more manageable, you can put your sed command into a file
 named "articles.sed", with the clauses appearing on separate lines and
@@ -82,7 +82,9 @@ the.txt
 
 Scripted solution:
 
+```
 s/\bthe \([bcdfghjklmnpqrstvwxyz]\)/a \1/g; # Replaces "the" followed by consonant with "a"
 s/\bThe \([bcdfghjklmnpqrstvwxyz]\)/A \1/g; # Replaces "The" followed by consonant with "A"
 s/\bthe \([aeiou]\)/an \1/g;                # Replaces "the" followed by a vowel with "an"
 s/\bThe \([aeiou]\)/An \1/g;                # Replaces "The" followed by a vowel with "An"
+```

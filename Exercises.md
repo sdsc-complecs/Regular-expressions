@@ -16,14 +16,14 @@ developing a solution now.
 
 (3) Write a grep one-liner that will match phone numbers of the forms
 
-(xxx) xxx-xxxx  
+xxx-xxxx  
 xxx-xxx-xxxx
 
 You can approach this incrementally by handling each of the two
 formats separately and ignoring additional characters that may be
-adjacent to the number (e.g., "(555) 555-1234x" or "x555-555-1234"),
+adjacent to the number (e.g., "555-555-1234x" or "x555-555-1234"),
 then combine into a single regex using alternation and proper handling
-of word boundaries.
+of word boundaries. Test your solution with the file phone.txt
 
 (4) Write a grep one-liner that will find amino acid sequences of the
 following form ('+' signs indicate concatenation and are not part of

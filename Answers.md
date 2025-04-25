@@ -6,16 +6,51 @@ to your own work. Answers to other problems are given below.
 
 (3) Write a grep one-liner that will match phone numbers of the forms
 
-(xxx) xxx-xxxx  
+xxx-xxxx  
 xxx-xxx-xxxx
 
-You can start by handling each of the two formats separately and
-ignoring additional characters that may be adjacent to the number
-(e.g., "(555) 555-1234x" or "x555-555-1234"), then combine into a
-single regex using alternation and proper handling of word boundaries.
+You can approach this incrementally by handling each of the two
+formats separately and ignoring additional characters that may be
+adjacent to the number (e.g., "555-555-1234x" or "x555-555-1234"),
+then combine into a single regex using alternation and proper handling
+of word boundaries. Test your solution with the file phone.txt
+
+Here's an incremental solution.
+
+First, find all numbers of the form xxx-xxx-xxxx
+
+```
+grep -E '[0-9]{3}-[0-9]{3}-[0-9]{4}' phone.txt
+```
+
+Use alternation and add expression for 7-digit numbers
+
+```
+grep -E '[0-9]{3}-[0-9]{3}-[0-9]{4}|[0-9]{3}-[0-9]{4}' phone.txt
+```
+
+Add word boundaries
+
+```
+grep -E '\<[0-9]{3}-[0-9]{3}-[0-9]{4}\>|\<[0-9]{3}-[0-9]{4}\>' phone.txt
+```
+
+Note that we're still picking up some invalid phone numbers. This is
+because the dash before the 7-digit number is considered a punctuation
+and hence part of the word boundary. We can exclude these spurious
+matches by breaking up the last regex into two parts; the first looks
+for 7-digit numbers at the start of the line and the second looks for
+a number preceded by anything but a letter, number or dash. This may
+still miss still some edge cases and you'll need to think more
+carefully about what is considered an acceptable match. For example,
+is a quoted number valid?
+
+```
+grep -E '\b[0-9]{3}-[0-9]{3}-[0-9]{4}\>|^[0-9]{3}-[0-9]{4}\>|[^-0-9A-Za-z][0-9]{3}-[0-9]{4}\>' phone.txt
+```
 
 (4) Write a grep one-liner that will find amino acid sequences of the
-following form ('+' signs indicate concatenation and are not part of
+following form ('+' signs indicate concateation and are not part of
 string). Optionally use -o option to output just the match. In case
 you're wondering, this is a part of the pattern that can be used to
 identify sequences that code for a portion of an antibody.
@@ -82,9 +117,7 @@ the.txt
 
 Scripted solution:
 
-```
 s/\bthe \([bcdfghjklmnpqrstvwxyz]\)/a \1/g; # Replaces "the" followed by consonant with "a"
 s/\bThe \([bcdfghjklmnpqrstvwxyz]\)/A \1/g; # Replaces "The" followed by consonant with "A"
 s/\bthe \([aeiou]\)/an \1/g;                # Replaces "the" followed by a vowel with "an"
 s/\bThe \([aeiou]\)/An \1/g;                # Replaces "The" followed by a vowel with "An"
-```

@@ -1,0 +1,19 @@
+The 1st phone number is 555-012-1234 and the 2nd is 555-012-1234.
+555-012-1234 is the 3rd phone number and 555-012-1234 is the 4th.
+The 5th phone number is 012-1234 and the 6th is 000-1234.
+012-1234 is the 7th phone number and 012-1234 is the 8th.
+"012-1234" is the 9th phone number and '012-1234' is the 10th.
+
+This is not a valid number: 555-012-1234x
+This is not a valid number: x555-012-1234
+This is not a valid number: 012-1234x
+This is not a valid number: x012-1234
+This is not a valid number: X012-1234
+This is not a valid number: 1012-1234
+This is not a valid number: 12-1234
+This is not a valid number: 012-12345
+This is not a valid number: 5555-012-1234
+This is not a valid number: 55-012-1234
+This is not a valid number: 5555-012-12345
+
+

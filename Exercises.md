@@ -5,7 +5,7 @@ material covered in the COMPLECS "Using Regular Expressions with Linux
 Tools" training.
 
 (1) Work through all the examples from the presentation, found in the
-file examples.sh, and make sure you understand what the regexes are
+file Examples.sh, and make sure you understand what the regexes are
 doing. We also suggest modifying the examples or deliberately breaking
 things (e.g., omitting quotes, backslashes, grep options, etc.) to see
 what happens.

@@ -66,8 +66,8 @@ that you already have a reasonable working knpowledge of sed.
 
 You can test your solution using the file "the.txt"
 
-Hints: Use \b to indicate word boundaries, \(...\) to capture match,
-and \1 to use match.
+Hints: Use `\b` to indicate word boundaries, `\(...\)` to capture match,
+and `\1` to use match.
 
 To make this more manageable, you can put your sed command into a file
 named "articles.sed", with the clauses appearing on separate lines and

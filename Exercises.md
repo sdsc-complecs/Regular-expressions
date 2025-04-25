@@ -26,7 +26,7 @@ then combine into a single regex using alternation and proper handling
 of word boundaries.
 
 (4) Write a grep one-liner that will find amino acid sequences of the
-following form ('+' signs indicate concateation and are not part of
+following form ('+' signs indicate concatenation and are not part of
 string).  Optionally use -o option to output just the match. In case
 you're wondering, this is a part of the pattern that can be used to
 identify sequences that code for a portion of an antibody.

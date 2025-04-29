@@ -9,7 +9,7 @@ to your own work. Answers to other problems are given below.
 xxx-xxxx  
 xxx-xxx-xxxx
 
-Where x is any digit and we're considering numbers starting with zero valid.
+Where x is any digit and considering numbers starting with zero valid.
 
 You can approach this incrementally by handling each of the two
 formats separately and ignoring additional characters that may be

@@ -31,3 +31,5 @@ data management and interactive computing. COMPLECS is supported by
 NSF award 2320934.
 
 <img src="./images/NSF_Official_logo_Med_Res_600ppi.png" alt="drawing" width="150"/>
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sdsc-complecs/Regular-expressions/HEAD)

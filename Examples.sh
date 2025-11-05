@@ -23,6 +23,8 @@ grep [[:alpha:]]oot oot.txt
 grep [[:digit:]]oot oot.txt
 grep [[:alnum:]]oot oot.txt
 grep [[:punct:]]oot oot.txt
+grep [[:lower:]3]oot oot.txt
+grep [[:punct:][:digit:]]oot oot.txt
 grep b....a fruit.txt
 grep .e..h fruit.txt
 grep .ea. fruit.txt
